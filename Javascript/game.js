@@ -1,3 +1,6 @@
+var score = 7;
+
+
 onload = function () {
     console.log('Page Game Started');
     var figura = document.getElementById("idImageHangHim");
@@ -11,9 +14,11 @@ onload = function () {
     var listButton = generateButtonAlphabet(alphabet, listLetter, listNodeLetter);
 }
 
+
+var numeroImg = 0;
 //Image list
-var imagesPath = ['IMG\1-HangHim.jpg','IMG\2-HangHim.jpg', 'IMG\3-HangHim.jpg', 'IMG\4-HangHim.jpg', 'IMG\5-HangHim.jpg',
-                    'IMG\6-HangHim.jpg', 'IMG\7-HangHim.jpg', 'IMG\8-HangHim.jpg',]
+var imagesPath = ['../IMG/1-HangHim.jpg','../IMG/2-HangHim.jpg', '../IMG/3-HangHim.jpg', '../IMG/4-HangHim.jpg', '../IMG/5-HangHim.jpg',
+                    '../IMG/6-HangHim.jpg', '../IMG/7-HangHim.jpg', '../IMG/8-HangHim.jpg']
 
 
 
@@ -44,14 +49,13 @@ function generateButtonAlphabet(alphabet, listLetter, listNodeLetter ){
         button.type = 'button';
         button.innerHTML = alphabet[i];
         button.id = "idButton"+i;
+        listButton.push(button);
+        containerButton.appendChild(listButton[i]);    
         button.addEventListener("click", function() {
-            this.style.backgroundColor = "grey";
-            this.style.color = 'white';
             letter = getTextButton(this.id);
             compareLetterToWord(letter, listLetter, listNodeLetter)
-          });
-        listButton.push(button);
-        containerButton.appendChild(listButton[i]);     
+            document.getElementById(this.id).remove();
+          }); 
     }
     return listButton
  }
@@ -82,12 +86,25 @@ function generateButtonAlphabet(alphabet, listLetter, listNodeLetter ){
  }
 
 function compareLetterToWord(letter, listLetter, listNodeLetter){
+    var letterIsPresent = false;
     for (var i = 0; i < listNodeLetter.length; i++){
-        console.log(letter)
-        console.log(listNodeLetter[i].textContent)
-        console.log(listLetter[i])
+        console.log(letter);
+        console.log(listNodeLetter[i].textContent);
+        console.log(listLetter[i]);
         if (letter == listLetter[i]){
-            listNodeLetter[i].textContent = letter
+            listNodeLetter[i].textContent = letter;
+            letterIsPresent = true
         }
-   }
+    }
+    if (letterIsPresent == false){
+            score -= 1;
+            scoreNode.value = score;
+            numeroImg += 1;
+            document.getElementById("idImageHangHim").src = imagesPath[numeroImg];
+            if (numeroImg == (imagesPath.length-1)){
+                alert('Game Lost');
+                location.reload() 
+            }
+    }
+    
 }

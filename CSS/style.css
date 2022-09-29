@@ -1,8 +1,9 @@
-    .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    .centerText {
+    text-align: center;
+  }
+
+  .title {
+    font-family: cursive;
   }
 
   .menuMail{
@@ -11,10 +12,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
   }
 
 .imageHangHim{
   width: 300;
   height: 400;
+}
+
+.scorePosition{
+  position: absolute;
+  top: 20%;
+  left: 80%;
 }

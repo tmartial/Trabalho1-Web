@@ -9,13 +9,14 @@
     <script src="../Javascript/game.js" charset="utf-8"></script>
 </head>
 <body>
-    <h1 class="center"> Game Started !</h1>
+    <h1 class="centerText title"> Game Started !</h1>
     <img src="../IMG/1-HangHim.jpg" id = "idImageHangHim"
     class = "idImageHangHim">
-    <div id="idWordToFind" ></div><br><hr>
-    <div id="idAlphabetButton"> </div><br>
-    Lettre cliqué :
-    <div id="idButtonCliqued"> </div>
-    
+    <div class="centerText" id="idWordToFind" ></div><br><hr>
+    <div class="centerText" id="idAlphabetButton"> </div><br>
+    Already clicked letters:
+    <div class="centerText" id="idButtonCliqued"> </div>
+    <button onclick=location.reload()>Play Again</button>
+    <div class="scorePosition" id="idScore">Score : </div>
 </body>
 </html>

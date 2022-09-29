@@ -10,7 +10,7 @@ onload = function () {
 
 function verifyMail(){
     var mailPriplanusian = this.document.getElementById("idUserMail").value
-    var priplanusMailFormat = /^\\([b-df-hj-np-tv-z]+)\[([b-df-hj-np-tv-z]+)(?=(\|)([b-df-hj-np-tv-z]+\]$)|(\]$)+)/
+    var priplanusMailFormat = /^\\([b-df-hj-np-tv-z]+)\[((([b-df-hj-np-tv-z]+)\|)*)([b-df-hj-np-tv-z]+)\]$/
     console.log("Veryfying mail adress");
     //Condition de vérification de l'adresse mail
     if(mailPriplanusian.match(priplanusMailFormat)){
