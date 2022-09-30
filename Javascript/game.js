@@ -1,12 +1,14 @@
 var score = 7;
-
+var wordsEasy = ['CAR', 'TEA', 'CUP', 'YES', 'CAT'];
+var wordsMedium = ['CHAIR', 'TABLE', 'STARS', 'PARIS', 'NOTES' ];
+var wordsHard = ['AMAZING', 'EXPLOSE', 'MIRRORS', 'PROGRAM', 'COMFORT'];
 
 onload = function () {
     console.log('Page Game Started');
     var figura = document.getElementById("idImageHangHim");
     var alphabet = generateAlphabet();
     console.log(alphabet);
-    var wordsMedium = ['CHAIR', 'TABLE', 'STARS'];
+    
     var wordToFind = chooseWordsAleatory(wordsMedium);
     var wordInfos = generateWordToFind(wordToFind);
     var listLetter = wordInfos[0];
@@ -50,7 +52,7 @@ function generateButtonAlphabet(alphabet, listLetter, listNodeLetter ){
         button.innerHTML = alphabet[i];
         button.id = "idButton"+i;
         listButton.push(button);
-        containerButton.appendChild(listButton[i]);    
+        containerButton.appendChild(listButton[i]);      
         button.addEventListener("click", function() {
             letter = getTextButton(this.id);
             compareLetterToWord(letter, listLetter, listNodeLetter)

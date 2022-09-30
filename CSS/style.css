@@ -7,20 +7,32 @@
   }
 
   .menuMail{
-    background-color: #d5d5d5;
-    text-align: center;
+    background-color:rgb(167, 107, 63);
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    margin-left: 25%;
+    margin-right:   25%;
+    color: black;
   }
 
 .imageHangHim{
-  width: 300;
-  height: 400;
+  width: 300px;
+  height: 400px;
+}
+
+.imageWelcome{
+    width: 200px;
+    height: 200px;
 }
 
 .scorePosition{
   position: absolute;
   top: 20%;
   left: 80%;
+  
 }
+
+.box{
+    background-color:rgb(255, 244, 224);
+}
+
