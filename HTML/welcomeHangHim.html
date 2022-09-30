@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to HangHim Game</title>
+    <title>Welcome to HangHim Game
+    </title>
     <link href='../css/style.css' rel='stylesheet'>
     <script src="../Javascript/welcome.js" charset="utf-8"></script>
-</head>
-<body class="box">
-    <h1 class="centerText title">Welcome to HangHim Game</h1>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" >
+  </head>
+  <body class = "boxBody">
+    <h1 class="center title">Welcome to HangHim Game
+    </h1>
     <div class="menuMail" id='idMenuMail'>
-        <br><img class="imageWelcome" src="..\IMG\imgHangHim.png">
-        <h2 class="centerText title">Rules</h2>
-        Writing of the rules and explaination of the game here <br>
-        Before starting the game, give us your e-mail adress<br>
-        \ddddd[sssss|sssss]<br><br>
-        
-        <form method=name ="formInfoUser" id="idFormUser">
-            Game level : <select name="levelGame" id="idGameLevel">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="difficult">Difficult</option>
-            </select><br>
-            User name : <input type="text" name="userName" id="idUserName"><br>
-            User e-mail : <input type="text" name="userMail" id="idUserMail">
-            <input type="button" name="buttonMail" id="idButtonMail" value="Send mail" onclick="verifyMail()"><br><br>
-            <input type="button" name="buttonStartGame" id="idButtonStartGame" value="Start game !" onclick="document.location.href='gamePage.html';"><br><br>
-        </form>
-        
-
-    </div>    
-</body>
+      <br>
+      <div class="center" name="divImageWelcome">
+      <img class="imageWelcome" src="..\IMG\imgHangHim.png">
+        </div>
+      <h2 class="center title">Rules
+      </h2>
+      <div class="center" name="divTextRules">
+        Writing of the rules and explaination of the game here 
+        <br>
+        Before starting the game, give us your e-mail adress
+        <br>
+        \ddddd[sssss|sssss]
+        <br>
+        <br>
+      </div>
+      <form name="formInfoUser" id="idFormUser">
+        <div class="boxInput">
+            <label>Game Level </label>
+            <i class="fa-solid fa-fire"></i><br>
+            <select name="levelGame" id="idGameLevel">
+            <option value="easy">Easy
+            </option>
+            <option value="medium">Medium
+            </option>
+            <option value="difficult">Difficult
+            </option>
+            </select>
+        </div>
+        <div class="boxInput">
+            <label >User name </label> 
+            <i class="fa-solid fa-user"></i><br>
+            <input type="text" name="userName" id="idUserName">
+            
+        </div>
+        <div class="boxInput">
+            <label >User e-mail </label>
+            <i class="fa-solid fa-envelope"></i> <br>
+            <input type="text" name="userMail" id="idUserMail">
+            
+        </div>
+        <div class="center">
+        <input  type="button" name="buttonMail" id="idButtonMail" value="Login" onclick="verifyMailAndForm()">
+        </div>
+      </form>
+      <br> 
+    </div>   
+    
+  </body>
 </html>

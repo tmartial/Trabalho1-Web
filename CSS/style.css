@@ -1,38 +1,67 @@
-    .centerText {
-    text-align: center;
-  }
-
-  .title {
-    font-family: cursive;
-  }
-
-  .menuMail{
-    background-color:rgb(167, 107, 63);
-    display: block;
-    text-align: center;
-    margin-left: 25%;
-    margin-right:   25%;
-    color: black;
-  }
-
-.imageHangHim{
-  width: 300px;
-  height: 400px;
+/* All Pages */
+.title {
+  font-family: cursive;
 }
-
-.imageWelcome{
-    width: 200px;
-    height: 200px;
-}
-
-.scorePosition{
-  position: absolute;
-  top: 20%;
-  left: 80%;
+.center {
+  text-align: center;
   
 }
 
-.box{
-    background-color:rgb(255, 244, 224);
+.boxBody{
+  background-color:rgb(255, 244, 224);
 }
 
+/* Welcome Page */
+
+.menuMail{
+  background-color:rgb(167, 107, 63);
+  display: block;
+  margin-left: 25%;
+  margin-right:   25%;
+  color: black;
+  border-radius: 10px;
+}
+
+.imageWelcome{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+
+.menuMail .boxInput{
+  position: relative;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.boxInput label{
+  margin-left: 100px;
+}
+
+.boxInput select{
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  margin-left: 100px;
+}
+
+.menuMail .boxInput input{
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  margin-left: 100px;
+  width: 200px;
+}
+
+
+/* Game Page */
+
+.imageHangHim{
+width: 300px;
+height: 400px;
+}
+
+.scorePosition{
+position: absolute;
+top: 20%;
+left: 80%;
+
+}

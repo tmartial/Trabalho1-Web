@@ -97,8 +97,6 @@ function compareLetterToWord(letter, listLetter, listNodeLetter){
         }
     }
     if (letterIsPresent == false){
-            score -= 1;
-            scoreNode.value = score;
             numeroImg += 1;
             document.getElementById("idImageHangHim").src = imagesPath[numeroImg];
             if (numeroImg == (imagesPath.length-1)){
