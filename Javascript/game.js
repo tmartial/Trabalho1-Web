@@ -1,14 +1,12 @@
 var score = 7;
-var wordsEasy = ['CAR', 'TEA', 'CUP', 'YES', 'CAT'];
-var wordsMedium = ['CHAIR', 'TABLE', 'STARS', 'PARIS', 'NOTES' ];
-var wordsHard = ['AMAZING', 'EXPLOSE', 'MIRRORS', 'PROGRAM', 'COMFORT'];
+var words = [['CAR', 'TEA', 'CUP', 'YES', 'CAT'], ['CHAIR', 'TABLE', 'STARS', 'PARIS', 'NOTES' ],['AMAZING', 'EXPLOSE', 'MIRRORS', 'PROGRAM', 'COMFORT']]
+var wordsMedium = ['CHAIR', 'TABLE', 'STARS', 'PARIS', 'NOTES']
 
 onload = function () {
     console.log('Page Game Started');
     var figura = document.getElementById("idImageHangHim");
     var alphabet = generateAlphabet();
     console.log(alphabet);
-    
     var wordToFind = chooseWordsAleatory(wordsMedium);
     var wordInfos = generateWordToFind(wordToFind);
     var listLetter = wordInfos[0];
