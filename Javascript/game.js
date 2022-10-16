@@ -16,13 +16,9 @@ var imagesPath = ['../IMG/1-HangHim.jpg','../IMG/2-HangHim.jpg', '../IMG/3-HangH
                     '../IMG/6-HangHim.jpg', '../IMG/7-HangHim.jpg', '../IMG/8-HangHim.jpg', '../IMG/9-HangHim.jpg' ]
 
 
-
-
 function chooseWordsAleatory(listWord) {
     var lengthListWord = listWord.length;
-    console.log(lengthListWord)
     var random = Math.floor(Math.random()*lengthListWord)
-    console.log('The random number is :', random)
     var wordToFind = listWord[random];
     console.log(wordToFind);
     return wordToFind
@@ -66,14 +62,12 @@ function generateButtonAlphabet(alphabet, listLetter, listNodeLetter ){
         nodeLetter.textContent = `_ `;
         listLetter.push(word[i]);
         listNodeLetter.push(nodeLetter);
-        console.log(listLetter);
         containerWord.appendChild(nodeLetter);  
     }
     return [listLetter, listNodeLetter];
  }
 
  function getTextButton(idButton){
-    console.log(idButton)
     var containerButtonCliqued = this.document.getElementById("idButtonCliqued");
     letter = document.getElementById(idButton).textContent;
     nodeLetter = document.createTextNode(letter); 
@@ -85,9 +79,6 @@ function compareLetterToWord(letter, listLetter, listNodeLetter){
     var letterIsPresent = false;
     
     for (var i = 0; i < listNodeLetter.length; i++){
-        console.log(letter);
-        console.log(listNodeLetter[i].textContent);
-        console.log(listLetter[i]);
         if (letter == listLetter[i]){
             listNodeLetter[i].textContent = letter;
             letterIsPresent = true
@@ -98,13 +89,10 @@ function compareLetterToWord(letter, listLetter, listNodeLetter){
             numeroImg += 1;
             document.getElementById("idImageHangHim").src = imagesPath[numeroImg];
             if (numeroImg == (imagesPath.length-1)){
-                alert('Game Lost');
+                alert('Game Lost')
                 this.document.location.href='endPageLost.html'
             }
     }
-    console.log("Test")
-    console.log(listLetter.length)
-    console.log(numberLetterFound)
     if (numberLetterFound == (listLetter.length)){
         alert('Game Won')
         this.document.location.href='endPageWin.html'
@@ -117,23 +105,18 @@ function changeGameLevel(){
     this.document.getElementById("idGameLevel").disabled = true
     this.document.getElementById("idButtonWord").hidden = true
     
-    console.log(levelGame)
     if (levelGame == 1){
         wordsDifficulty = words[0]
-        console.log(wordsDifficulty)
     }
     if (levelGame == 2){
         wordsDifficulty = words[1]
-        console.log(wordsDifficulty)
     }
     if (levelGame == 3){
         wordsDifficulty = words[2]
-        console.log(wordsDifficulty)
     }
     var wordToFind = chooseWordsAleatory(wordsDifficulty);
     var wordInfos = generateWordToFind(wordToFind);
     var listLetter = wordInfos[0];
     var listNodeLetter = wordInfos[1];
     var listButton = generateButtonAlphabet(alphabet, listLetter, listNodeLetter);
-    return wordsDifficulty
 }
