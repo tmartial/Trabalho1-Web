@@ -1,5 +1,5 @@
 # Trabalho1-Web - Jogo da forca
-Aluno: MARTIAL Thomas 
+Aluno: MARTIAL Thomas <br>
 Matricula: 2220075
 
 ## Presentação do jogo
