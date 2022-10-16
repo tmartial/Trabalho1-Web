@@ -1,6 +1,5 @@
 onload = function () {
     console.log('Welcome page with mail of the user');
-    var levelGamePriplanusian = this.document.getElementById("idGameLevel").value
 }
 
 

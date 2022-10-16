@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HangHim Game</title>
     <link href='../css/style.css' rel='stylesheet'>
     <script src="../Javascript/game.js" charset="utf-8"></script>
-</head>
-<body class="boxBody">
+  </head>
+  <body class="boxBody ">
     <h1 class="center title"> Game Started !</h1>
-    <div class="center" name=" imgHangHimGame">
-    <img src="../IMG/1-HangHim.jpg" id = "idImageHangHim"
-    class = "idImageHangHim">
+    <div class="menuGame center">
+        <div>
+            <label>Game Level </label>
+            <i class="fa-solid fa-fire"></i><br>
+            <select name="levelGame" id="idGameLevel">
+            <option value=1>Easy
+            </option>  
+            <option value=2>Medium
+            </option>
+            <option value=3>Difficult
+            </option>
+            </select>
+        </div><br>
+        <div>
+        <input  type="button" name="buttonWord" id="idButtonWord" value="Generate Word" onclick="changeGameLevel()">
+    </div><br>
+      <div name="imgHangHimGame">
+        <img src="../IMG/1-HangHim.jpg" id="idImageHangHim" class="imageHangHim">
+      </div>
+      <div id="idWordToFind"></div>
+      <br>
+      <hr>
+      <div id="idAlphabetButton"></div>
+      <div  id="idButtonCliqued">
+        <br> Already clicked letters: <br>
+        </div>
+        <br>
+        <button onclick=location.reload()>Restart Game</button>
+      <br>
     </div>
-    <div class="centerText" id="idWordToFind" ></div><br><hr>
-    <div class="centerText" id="idAlphabetButton"> </div><br>
-    Already clicked letters:
-    <div class="centerText" id="idButtonCliqued"> </div>
-    <button onclick=location.reload()>Play Again</button>
-    <div class="scorePosition" id="idScore">Score : </div>
-</body>
+  </body>
 </html>

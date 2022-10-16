@@ -1,24 +1,20 @@
-var score = 7;
 var words = [['CAR', 'TEA', 'CUP', 'YES', 'CAT'], ['CHAIR', 'TABLE', 'STARS', 'PARIS', 'NOTES' ],['AMAZING', 'EXPLOSE', 'MIRRORS', 'PROGRAM', 'COMFORT']]
-var wordsMedium = ['CHAIR', 'TABLE', 'STARS', 'PARIS', 'NOTES']
+var wordsSublist = words[0]
+var numeroImg = 0;
+var numberLetterFound = 0;
+var alphabet = generateAlphabet();
+var levelChoosen = false
 
 onload = function () {
     console.log('Page Game Started');
     var figura = document.getElementById("idImageHangHim");
-    var alphabet = generateAlphabet();
-    console.log(alphabet);
-    var wordToFind = chooseWordsAleatory(wordsMedium);
-    var wordInfos = geginerateWordToFind(wordToFind);
-    var listLetter = wordInfos[0];
-    var listNodeLetter = wordInfos[1];
-    var listButton = generateButtonAlphabet(alphabet, listLetter, listNodeLetter);
 }
 
 
-var numeroImg = 0;
 //Image list
 var imagesPath = ['../IMG/1-HangHim.jpg','../IMG/2-HangHim.jpg', '../IMG/3-HangHim.jpg', '../IMG/4-HangHim.jpg', '../IMG/5-HangHim.jpg',
-                    '../IMG/6-HangHim.jpg', '../IMG/7-HangHim.jpg', '../IMG/8-HangHim.jpg']
+                    '../IMG/6-HangHim.jpg', '../IMG/7-HangHim.jpg', '../IMG/8-HangHim.jpg', '../IMG/9-HangHim.jpg' ]
+
 
 
 
@@ -29,7 +25,7 @@ function chooseWordsAleatory(listWord) {
     console.log('The random number is :', random)
     var wordToFind = listWord[random];
     console.log(wordToFind);
-    return wordToFind;
+    return wordToFind
 }
 
 
@@ -87,6 +83,7 @@ function generateButtonAlphabet(alphabet, listLetter, listNodeLetter ){
 
 function compareLetterToWord(letter, listLetter, listNodeLetter){
     var letterIsPresent = false;
+    
     for (var i = 0; i < listNodeLetter.length; i++){
         console.log(letter);
         console.log(listNodeLetter[i].textContent);
@@ -94,6 +91,7 @@ function compareLetterToWord(letter, listLetter, listNodeLetter){
         if (letter == listLetter[i]){
             listNodeLetter[i].textContent = letter;
             letterIsPresent = true
+            numberLetterFound += 1;
         }
     }
     if (letterIsPresent == false){
@@ -101,8 +99,41 @@ function compareLetterToWord(letter, listLetter, listNodeLetter){
             document.getElementById("idImageHangHim").src = imagesPath[numeroImg];
             if (numeroImg == (imagesPath.length-1)){
                 alert('Game Lost');
-                location.reload() 
+                this.document.location.href='endPageLost.html'
             }
     }
+    console.log("Test")
+    console.log(listLetter.length)
+    console.log(numberLetterFound)
+    if (numberLetterFound == (listLetter.length)){
+        alert('Game Won')
+        this.document.location.href='endPageWin.html'
+    }
+}
+
+function changeGameLevel(){
+    var wordsDifficulty = words[0]
+    levelGame = this.document.getElementById("idGameLevel").value
+    this.document.getElementById("idGameLevel").disabled = true
+    this.document.getElementById("idButtonWord").hidden = true
     
+    console.log(levelGame)
+    if (levelGame == 1){
+        wordsDifficulty = words[0]
+        console.log(wordsDifficulty)
+    }
+    if (levelGame == 2){
+        wordsDifficulty = words[1]
+        console.log(wordsDifficulty)
+    }
+    if (levelGame == 3){
+        wordsDifficulty = words[2]
+        console.log(wordsDifficulty)
+    }
+    var wordToFind = chooseWordsAleatory(wordsDifficulty);
+    var wordInfos = generateWordToFind(wordToFind);
+    var listLetter = wordInfos[0];
+    var listNodeLetter = wordInfos[1];
+    var listButton = generateButtonAlphabet(alphabet, listLetter, listNodeLetter);
+    return wordsDifficulty
 }
