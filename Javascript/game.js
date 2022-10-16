@@ -8,7 +8,7 @@ onload = function () {
     var alphabet = generateAlphabet();
     console.log(alphabet);
     var wordToFind = chooseWordsAleatory(wordsMedium);
-    var wordInfos = generateWordToFind(wordToFind);
+    var wordInfos = geginerateWordToFind(wordToFind);
     var listLetter = wordInfos[0];
     var listNodeLetter = wordInfos[1];
     var listButton = generateButtonAlphabet(alphabet, listLetter, listNodeLetter);
