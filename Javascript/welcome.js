@@ -17,7 +17,7 @@ function verifyMailAndForm(){
         validationMail = true
     }else{
         alert("You have entered an invalid email address!");
-    }
+    }""
     if(namePriplanusian!=''){
         validationName = true;
     }else{
