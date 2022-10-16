@@ -25,7 +25,7 @@ Eu também consegui simplesmente fazer uma escolha de dificuldade (fácil, médi
 
 ### O que não funcionou ?
 Eu tinha várias ideias que não conseguia realizar.
-Eu queria colocar uma pontuação em relação ao número de letras não pertencentes à palavra (para contar o número de erros que o jogador comete)
+Eu queria colocar uma pontuação em relação ao número de letras não pertencentes à palavra (para contar o número de erros que o jogador comete).
 Eu também queria ter um pequeno banco de dados ou dicionário para manter o melhor jogador e sua pontuação.
-Também queria colocar a escolha de dificuldade do jogo na página inicial mas não consegui.
+Também queria colocar a escolha de dificuldade do jogo na página inicial mas não consegui usando somente HTML, CSS e Javascript.
 Por fim, não fiz repetição no select como solicitado no depoimento porque não entendi o que tinha que ser feito e vi que tinha que ser feito bem tarde.
